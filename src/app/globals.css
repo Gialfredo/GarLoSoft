@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+/* Paleta de colores GarLoSoft */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-light: #F2F2F2;
+  --primary-dark: #14268C;
+  --primary-medium: #2669BF;
+  --primary-light: #2A7ABF;
+  --accent: #5ED7F2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--bg-light);
+    color: #1f2937;
+  }
+  
+  h1, h2, h3 {
+    color: var(--primary-dark);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Botón primario */
+  .btn-primary {
+    background-color: var(--primary-medium);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-light);
+  }
+  
+  /* Botón outline */
+  .btn-outline {
+    border: 2px solid var(--primary-medium);
+    color: var(--primary-medium);
+    background: transparent;
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--primary-medium);
+    color: white;
+  }
+  
+  /* Botón CTA */
+  .btn-cta {
+    background-color: var(--accent);
+    color: var(--primary-dark);
+  }
+  
+  .btn-cta:hover {
+    background-color: #4bc4e0;
+  }
+  
+  /* Botón contacto header */
+  .btn-header {
+    background-color: var(--primary-medium);
+    color: white;
+  }
+  
+  .btn-header:hover {
+    background-color: var(--primary-light);
+  }
+  
+  /* Tarjetas de servicios */
+  .service-card {
+    background-color: #1a348c;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Link de navegación */
+  .nav-link {
+    color: #374151;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-medium);
+  }
+  
+  /* Link del footer */
+  .footer-link {
+    transition: color 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--accent);
+  }
 }
